@@ -7,10 +7,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Table View Controller-->
+        <!--Trend Media Table View Controller-->
         <scene sceneID="ofa-Uh-k13">
             <objects>
-                <tableViewController id="Qtu-DT-DXR" sceneMemberID="viewController">
+                <tableViewController id="Qtu-DT-DXR" customClass="TrendMediaTableViewController" customModule="Shopping" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="JnY-Vq-oeb">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -25,7 +25,7 @@
                                         <constraint firstAttribute="width" secondItem="WUx-pN-9He" secondAttribute="height" multiplier="1:1" id="Afg-vI-BLB"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="xmark.square.fill" catalog="system"/>
                                 </button>
                                 <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="BED-lN-Scx">
                                     <rect key="frame" x="44" y="10" width="326" height="24"/>
@@ -38,7 +38,7 @@
                                         <constraint firstAttribute="width" secondItem="7xe-xo-619" secondAttribute="height" multiplier="1:1" id="gEp-sF-rfh"/>
                                     </constraints>
                                     <state key="normal" title="Button"/>
-                                    <buttonConfiguration key="configuration" style="plain"/>
+                                    <buttonConfiguration key="configuration" style="plain" image="xmark.circle" catalog="system"/>
                                 </button>
                             </subviews>
                             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -56,14 +56,14 @@
                             </constraints>
                         </view>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="87" id="crr-1Y-Bce">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="TrendMediaTableViewCell" rowHeight="87" id="crr-1Y-Bce" customClass="TrendMediaTableViewCell" customModule="Shopping" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="88.5" width="414" height="87"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="crr-1Y-Bce" id="oia-zD-bqw">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="87"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OeP-kX-izr">
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OeP-kX-izr">
                                             <rect key="frame" x="10" y="0.0" width="60" height="87"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" secondItem="OeP-kX-izr" secondAttribute="height" multiplier="20:29" id="kcL-nM-XiR"/>
@@ -72,25 +72,29 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="4" translatesAutoresizingMaskIntoConstraints="NO" id="ZM6-b1-1Ah">
                                             <rect key="frame" x="80" y="10" width="324" height="67"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mK-LT-CFo">
-                                                    <rect key="frame" x="0.0" y="0.0" width="324" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1mK-LT-CFo">
+                                                    <rect key="frame" x="0.0" y="0.0" width="324" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atZ-v6-fcG">
-                                                    <rect key="frame" x="0.0" y="24.5" width="324" height="20.5"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="atZ-v6-fcG">
+                                                    <rect key="frame" x="0.0" y="23.5" width="324" height="20"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kW-ej-wtx">
-                                                    <rect key="frame" x="0.0" y="49" width="324" height="18"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kW-ej-wtx">
+                                                    <rect key="frame" x="0.0" y="47.5" width="324" height="19.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                             </subviews>
+                                            <constraints>
+                                                <constraint firstItem="atZ-v6-fcG" firstAttribute="height" secondItem="1mK-LT-CFo" secondAttribute="height" id="3Ok-gu-Bja"/>
+                                                <constraint firstItem="9kW-ej-wtx" firstAttribute="height" secondItem="1mK-LT-CFo" secondAttribute="height" id="WvK-bq-Oc0"/>
+                                            </constraints>
                                         </stackView>
                                     </subviews>
                                     <constraints>
@@ -103,6 +107,12 @@
                                         <constraint firstItem="ZM6-b1-1Ah" firstAttribute="top" secondItem="oia-zD-bqw" secondAttribute="top" constant="10" id="yfB-kK-yxE"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="movieDateLabel" destination="9kW-ej-wtx" id="AJj-5q-CVg"/>
+                                    <outlet property="movieStoryLabel" destination="atZ-v6-fcG" id="soK-C5-8IQ"/>
+                                    <outlet property="movieTitleLabel" destination="1mK-LT-CFo" id="wNY-xT-NDQ"/>
+                                    <outlet property="posterImageView" destination="OeP-kX-izr" id="d5A-4e-QZi"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -117,6 +127,8 @@
         </scene>
     </scenes>
     <resources>
+        <image name="xmark.circle" catalog="system" width="128" height="121"/>
+        <image name="xmark.square.fill" catalog="system" width="128" height="114"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
