@@ -56,6 +56,16 @@ class ShoppingTableViewController: UITableViewController {
         cell.titleLabel.textAlignment = .center
         return cell
     }
-
+    
+    @IBAction func TextFieldReturn(_ sender: UITextField) {
+        list.append(sender.text!)
+        tableView.reloadData()
+    }
+    
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        list.append(SearchTextField.text!)
+        tableView.reloadData()
+    }
+    
 }
 
