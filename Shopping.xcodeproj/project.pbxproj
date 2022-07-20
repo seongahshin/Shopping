@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8C2BC1612887D466009D5624 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2BC1602887D466009D5624 /* Book.storyboard */; };
+		8C2BC1632887D479009D5624 /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2BC1622887D479009D5624 /* BookCollectionViewController.swift */; };
 		8CD736AD2886B6D30048BFF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736AC2886B6D30048BFF8 /* AppDelegate.swift */; };
 		8CD736AF2886B6D30048BFF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736AE2886B6D30048BFF8 /* SceneDelegate.swift */; };
 		8CD736B12886B6D30048BFF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736B02886B6D30048BFF8 /* ViewController.swift */; };
@@ -18,9 +20,13 @@
 		8CD736C62886BCEC0048BFF8 /* Storyboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8CD736C52886BCEC0048BFF8 /* Storyboard.storyboard */; };
 		8CD736C82886C0130048BFF8 /* TrendMediaTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736C72886C0130048BFF8 /* TrendMediaTableViewController.swift */; };
 		8CD736CA2886C0940048BFF8 /* TrendMediaTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736C92886C0940048BFF8 /* TrendMediaTableViewCell.swift */; };
+		8CD736CC28878C9E0048BFF8 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736CB28878C9E0048BFF8 /* Movie.swift */; };
+		8CD736CE288795340048BFF8 /* MovieInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736CD288795340048BFF8 /* MovieInfo.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		8C2BC1602887D466009D5624 /* Book.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
+		8C2BC1622887D479009D5624 /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
 		8CD736A92886B6D30048BFF8 /* Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD736AC2886B6D30048BFF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CD736AE2886B6D30048BFF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -34,6 +40,8 @@
 		8CD736C52886BCEC0048BFF8 /* Storyboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Storyboard.storyboard; sourceTree = "<group>"; };
 		8CD736C72886C0130048BFF8 /* TrendMediaTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMediaTableViewController.swift; sourceTree = "<group>"; };
 		8CD736C92886C0940048BFF8 /* TrendMediaTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrendMediaTableViewCell.swift; sourceTree = "<group>"; };
+		8CD736CB28878C9E0048BFF8 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		8CD736CD288795340048BFF8 /* MovieInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieInfo.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +55,19 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8C2BC15F2887D44E009D5624 /* Book */ = {
+			isa = PBXGroup;
+			children = (
+				8C2BC1602887D466009D5624 /* Book.storyboard */,
+				8C2BC1622887D479009D5624 /* BookCollectionViewController.swift */,
+			);
+			path = Book;
+			sourceTree = "<group>";
+		};
 		8CD736A02886B6D30048BFF8 = {
 			isa = PBXGroup;
 			children = (
+				8C2BC15F2887D44E009D5624 /* Book */,
 				8CD736C42886BCCF0048BFF8 /* TrendMedia */,
 				8CD736AB2886B6D30048BFF8 /* Shopping */,
 				8CD736AA2886B6D30048BFF8 /* Products */,
@@ -84,7 +102,9 @@
 			children = (
 				8CD736C52886BCEC0048BFF8 /* Storyboard.storyboard */,
 				8CD736C72886C0130048BFF8 /* TrendMediaTableViewController.swift */,
+				8CD736CB28878C9E0048BFF8 /* Movie.swift */,
 				8CD736B52886B6D50048BFF8 /* Assets.xcassets */,
+				8CD736CD288795340048BFF8 /* MovieInfo.swift */,
 				8CD736C92886C0940048BFF8 /* TrendMediaTableViewCell.swift */,
 			);
 			path = TrendMedia;
@@ -151,6 +171,7 @@
 				8CD736B92886B6D50048BFF8 /* LaunchScreen.storyboard in Resources */,
 				8CD736C62886BCEC0048BFF8 /* Storyboard.storyboard in Resources */,
 				8CD736B62886B6D50048BFF8 /* Assets.xcassets in Resources */,
+				8C2BC1612887D466009D5624 /* Book.storyboard in Resources */,
 				8CD736B42886B6D30048BFF8 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,12 +184,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				8CD736C32886B82D0048BFF8 /* ShoppingTableViewCell.swift in Sources */,
+				8CD736CE288795340048BFF8 /* MovieInfo.swift in Sources */,
 				8CD736B12886B6D30048BFF8 /* ViewController.swift in Sources */,
 				8CD736CA2886C0940048BFF8 /* TrendMediaTableViewCell.swift in Sources */,
 				8CD736C82886C0130048BFF8 /* TrendMediaTableViewController.swift in Sources */,
 				8CD736C12886B70B0048BFF8 /* ShoppingTableViewController.swift in Sources */,
 				8CD736AD2886B6D30048BFF8 /* AppDelegate.swift in Sources */,
+				8CD736CC28878C9E0048BFF8 /* Movie.swift in Sources */,
 				8CD736AF2886B6D30048BFF8 /* SceneDelegate.swift in Sources */,
+				8C2BC1632887D479009D5624 /* BookCollectionViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
