@@ -37,6 +37,12 @@ class BookCollectionViewController: UICollectionViewController {
         cell.backgroundColor = .orange
         cell.layer.cornerRadius = 20
         
+        if indexPath.row % 2 == 0 {
+            cell.backgroundColor = .systemPink
+        } else {
+            cell.backgroundColor = .systemPurple
+        }
+        
         let data = bookName[indexPath.item]
         cell.configureCell(data: data)
         
