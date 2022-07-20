@@ -18,7 +18,11 @@ class TrendMediaTableViewCell: UITableViewCell {
     
     @IBOutlet weak var movieDateLabel: UILabel!
     
-    
+    func configureCell(data: Movie) {
+        movieTitleLabel.text = data.title
+        movieTitleLabel.textColor = .black
+        movieTitleLabel.font = .systemFont(ofSize: 10)
+    }
     
     
 }
