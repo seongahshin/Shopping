@@ -23,7 +23,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="WBB-dO-fBb">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BookCollectionViewCell" id="WBB-dO-fBb" customClass="BookCollectionViewCell" customModule="Shopping" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="148" height="140"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Xi7-fE-ocf">
@@ -66,6 +66,11 @@
                                     </constraints>
                                 </collectionViewCellContentView>
                                 <size key="customSize" width="148" height="140"/>
+                                <connections>
+                                    <outlet property="bookImage" destination="G1q-Bi-mw6" id="hcW-m9-29z"/>
+                                    <outlet property="bookRate" destination="Myv-r5-bfl" id="ZG1-m5-8EN"/>
+                                    <outlet property="bookTitle" destination="VE4-z1-sGU" id="MEf-0u-9CA"/>
+                                </connections>
                             </collectionViewCell>
                         </cells>
                         <connections>

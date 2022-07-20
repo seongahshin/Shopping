@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		8C2BC1612887D466009D5624 /* Book.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2BC1602887D466009D5624 /* Book.storyboard */; };
 		8C2BC1632887D479009D5624 /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2BC1622887D479009D5624 /* BookCollectionViewController.swift */; };
+		8C2BC1692887DAE3009D5624 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2BC1682887DAE3009D5624 /* BookCollectionViewCell.swift */; };
+		8C2BC16B2887DE10009D5624 /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2BC16A2887DE10009D5624 /* BookInfo.swift */; };
 		8CD736AD2886B6D30048BFF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736AC2886B6D30048BFF8 /* AppDelegate.swift */; };
 		8CD736AF2886B6D30048BFF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736AE2886B6D30048BFF8 /* SceneDelegate.swift */; };
 		8CD736B12886B6D30048BFF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736B02886B6D30048BFF8 /* ViewController.swift */; };
@@ -27,6 +29,8 @@
 /* Begin PBXFileReference section */
 		8C2BC1602887D466009D5624 /* Book.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Book.storyboard; sourceTree = "<group>"; };
 		8C2BC1622887D479009D5624 /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
+		8C2BC1682887DAE3009D5624 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
+		8C2BC16A2887DE10009D5624 /* BookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
 		8CD736A92886B6D30048BFF8 /* Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD736AC2886B6D30048BFF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CD736AE2886B6D30048BFF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -59,6 +63,8 @@
 			isa = PBXGroup;
 			children = (
 				8C2BC1602887D466009D5624 /* Book.storyboard */,
+				8C2BC16A2887DE10009D5624 /* BookInfo.swift */,
+				8C2BC1682887DAE3009D5624 /* BookCollectionViewCell.swift */,
 				8C2BC1622887D479009D5624 /* BookCollectionViewController.swift */,
 			);
 			path = Book;
@@ -183,9 +189,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C2BC16B2887DE10009D5624 /* BookInfo.swift in Sources */,
 				8CD736C32886B82D0048BFF8 /* ShoppingTableViewCell.swift in Sources */,
 				8CD736CE288795340048BFF8 /* MovieInfo.swift in Sources */,
 				8CD736B12886B6D30048BFF8 /* ViewController.swift in Sources */,
+				8C2BC1692887DAE3009D5624 /* BookCollectionViewCell.swift in Sources */,
 				8CD736CA2886C0940048BFF8 /* TrendMediaTableViewCell.swift in Sources */,
 				8CD736C82886C0130048BFF8 /* TrendMediaTableViewController.swift in Sources */,
 				8CD736C12886B70B0048BFF8 /* ShoppingTableViewController.swift in Sources */,
