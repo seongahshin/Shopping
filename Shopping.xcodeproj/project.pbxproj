@@ -11,6 +11,8 @@
 		8C2BC1632887D479009D5624 /* BookCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2BC1622887D479009D5624 /* BookCollectionViewController.swift */; };
 		8C2BC1692887DAE3009D5624 /* BookCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2BC1682887DAE3009D5624 /* BookCollectionViewCell.swift */; };
 		8C2BC16B2887DE10009D5624 /* BookInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2BC16A2887DE10009D5624 /* BookInfo.swift */; };
+		8C2BC16E2887E608009D5624 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 8C2BC16D2887E608009D5624 /* Kingfisher */; };
+		8C2BC1702887EA61009D5624 /* BookStruct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2BC16F2887EA61009D5624 /* BookStruct.swift */; };
 		8CD736AD2886B6D30048BFF8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736AC2886B6D30048BFF8 /* AppDelegate.swift */; };
 		8CD736AF2886B6D30048BFF8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736AE2886B6D30048BFF8 /* SceneDelegate.swift */; };
 		8CD736B12886B6D30048BFF8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD736B02886B6D30048BFF8 /* ViewController.swift */; };
@@ -31,6 +33,7 @@
 		8C2BC1622887D479009D5624 /* BookCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewController.swift; sourceTree = "<group>"; };
 		8C2BC1682887DAE3009D5624 /* BookCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCollectionViewCell.swift; sourceTree = "<group>"; };
 		8C2BC16A2887DE10009D5624 /* BookInfo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookInfo.swift; sourceTree = "<group>"; };
+		8C2BC16F2887EA61009D5624 /* BookStruct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookStruct.swift; sourceTree = "<group>"; };
 		8CD736A92886B6D30048BFF8 /* Shopping.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Shopping.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD736AC2886B6D30048BFF8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8CD736AE2886B6D30048BFF8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8C2BC16E2887E608009D5624 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -66,6 +70,7 @@
 				8C2BC16A2887DE10009D5624 /* BookInfo.swift */,
 				8C2BC1682887DAE3009D5624 /* BookCollectionViewCell.swift */,
 				8C2BC1622887D479009D5624 /* BookCollectionViewController.swift */,
+				8C2BC16F2887EA61009D5624 /* BookStruct.swift */,
 			);
 			path = Book;
 			sourceTree = "<group>";
@@ -132,6 +137,9 @@
 			dependencies = (
 			);
 			name = Shopping;
+			packageProductDependencies = (
+				8C2BC16D2887E608009D5624 /* Kingfisher */,
+			);
 			productName = Shopping;
 			productReference = 8CD736A92886B6D30048BFF8 /* Shopping.app */;
 			productType = "com.apple.product-type.application";
@@ -160,6 +168,9 @@
 				Base,
 			);
 			mainGroup = 8CD736A02886B6D30048BFF8;
+			packageReferences = (
+				8C2BC16C2887E608009D5624 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 8CD736AA2886B6D30048BFF8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -190,6 +201,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8C2BC16B2887DE10009D5624 /* BookInfo.swift in Sources */,
+				8C2BC1702887EA61009D5624 /* BookStruct.swift in Sources */,
 				8CD736C32886B82D0048BFF8 /* ShoppingTableViewCell.swift in Sources */,
 				8CD736CE288795340048BFF8 /* MovieInfo.swift in Sources */,
 				8CD736B12886B6D30048BFF8 /* ViewController.swift in Sources */,
@@ -418,6 +430,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		8C2BC16C2887E608009D5624 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 7.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		8C2BC16D2887E608009D5624 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 8C2BC16C2887E608009D5624 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 8CD736A12886B6D30048BFF8 /* Project object */;
 }

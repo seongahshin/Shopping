@@ -13,4 +13,9 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookRate: UILabel!
     
+    func configureCell(data: BookStruct) {
+        bookTitle.text = data.title
+        bookRate.text = "\(data.rate)"
+        
+    }
 }

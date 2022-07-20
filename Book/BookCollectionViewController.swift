@@ -6,9 +6,12 @@
 //
 
 import UIKit
+import Kingfisher
 
 class BookCollectionViewController: UICollectionViewController {
-
+    
+    var bookName = BookInfo().book
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,6 +36,12 @@ class BookCollectionViewController: UICollectionViewController {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
         cell.backgroundColor = .orange
         cell.layer.cornerRadius = 20
+        
+        let data = bookName[indexPath.item]
+        cell.configureCell(data: data)
+        
+        let url = URL(string: data.bookimageview)
+        cell.bookImage.kf.setImage(with: url)
         return cell
     }
     
