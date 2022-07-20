@@ -14,7 +14,6 @@ class BookCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         let layout = UICollectionViewFlowLayout()
         
         let spacing: CGFloat = 8

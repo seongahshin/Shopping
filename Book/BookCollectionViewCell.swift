@@ -14,8 +14,18 @@ class BookCollectionViewCell: UICollectionViewCell {
     @IBOutlet weak var bookRate: UILabel!
     
     func configureCell(data: BookStruct) {
+        // 타이틀
+        bookTitle.font = .boldSystemFont(ofSize: 20)
+        bookTitle.textColor = .white
         bookTitle.text = data.title
-        bookRate.text = "\(data.rate)"
         
+        // 평점
+        bookRate.font = .systemFont(ofSize: 15)
+        bookRate.textColor = .white
+        bookRate.text = "\(data.rate)"
+        bookRate.textAlignment = .center
     }
+    
+    
+        
 }
