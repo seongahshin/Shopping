@@ -19,8 +19,11 @@ class BookCollectionViewController: UICollectionViewController {
         let spacing: CGFloat = 8
         let width = UIScreen.main.bounds.width - (spacing * 3)
         
+        // 사이즈
         layout.itemSize = CGSize(width: width/2, height: width/2)
+        // 스크롤 방향
         layout.scrollDirection = .vertical
+        
         layout.sectionInset = UIEdgeInsets(top: spacing, left: spacing, bottom: spacing, right: spacing)
         layout.minimumLineSpacing = spacing
         layout.minimumInteritemSpacing = spacing
@@ -33,7 +36,6 @@ class BookCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "BookCollectionViewCell", for: indexPath) as! BookCollectionViewCell
-        cell.backgroundColor = .orange
         cell.layer.cornerRadius = 20
         
         if indexPath.row % 2 == 0 {
@@ -50,4 +52,13 @@ class BookCollectionViewController: UICollectionViewController {
         return cell
     }
     
+    // 0번 item cell 누르면 상세화면으로 이동
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        if indexPath.item == 0 {
+            let sb = UIStoryboard(name: "Book", bundle: nil)
+            let vc = sb.instantiateViewController(withIdentifier: "BookViewController") as! BookViewController
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+    }
 }

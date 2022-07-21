@@ -12,3 +12,4 @@ struct BookStruct {
     var rate : Double
     var bookimageview: String
 }
+
