@@ -81,7 +81,11 @@
                     </collectionView>
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="RP8-G2-luv">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="UWs-cR-AzA"/>
+                        <barButtonItem key="rightBarButtonItem" title="Item" image="magnifyingglass" catalog="system" id="UWs-cR-AzA">
+                            <connections>
+                                <action selector="searchbarButtonClicked:" destination="5G4-25-0hN" id="Hvr-h3-YXl"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                 </collectionViewController>
@@ -113,6 +117,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="njZ-d5-XDV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2903" y="88"/>
+        </scene>
+        <!--Search View Controller-->
+        <scene sceneID="dqU-7r-BS7">
+            <objects>
+                <viewController storyboardIdentifier="SearchViewController" id="nic-OM-z7A" customClass="SearchViewController" customModule="Shopping" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bUh-TG-fKe">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="2Ud-zP-oiJ"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6oU-oO-B0K"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="H1U-jM-mMQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3704" y="88"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Zts-Zn-st5">

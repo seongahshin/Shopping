@@ -61,4 +61,13 @@ class BookCollectionViewController: UICollectionViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
+    
+    // 바버튼아이템 눌렀을 때 검색화면으로 이동
+    @IBAction func searchbarButtonClicked(_ sender: UIBarButtonItem) {
+        let sb = UIStoryboard(name: "Book", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "SearchViewController") as! SearchViewController
+        let nav = UINavigationController(rootViewController: vc)
+        nav.modalPresentationStyle = .fullScreen
+        self.present(nav, animated: true)
+    }
 }
