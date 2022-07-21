@@ -9,6 +9,8 @@ import UIKit
 
 class BookCollectionViewCell: UICollectionViewCell {
     
+    static let identifier = "BookViewController"
+    static let identifier1 = "SearchViewController"
     @IBOutlet weak var bookImage: UIImageView!
     @IBOutlet weak var bookTitle: UILabel!
     @IBOutlet weak var bookRate: UILabel!
