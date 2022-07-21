@@ -14,6 +14,11 @@ class BookViewController: UIViewController {
         
     }
     
+    @IBAction func buttonClicked(_ sender: UIButton) {
+        let sb = UIStoryboard(name: "Book", bundle: nil)
+        let vc = sb.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
+        self.navigationController?.pushViewController(vc, animated: true)
+    }
     
 
 }
