@@ -3,6 +3,7 @@
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -73,6 +74,7 @@
                                     <outlet property="movieStoryLabel" destination="atZ-v6-fcG" id="soK-C5-8IQ"/>
                                     <outlet property="movieTitleLabel" destination="1mK-LT-CFo" id="wNY-xT-NDQ"/>
                                     <outlet property="posterImageView" destination="OeP-kX-izr" id="d5A-4e-QZi"/>
+                                    <segue destination="XG2-nY-gn6" kind="show" id="NFC-EP-HsC"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -85,6 +87,31 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QUP-Xe-9yd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="327.536231884058" y="39.508928571428569"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="INb-qP-kLF">
+            <objects>
+                <viewController id="XG2-nY-gn6" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="fwo-Sm-65Q">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vxo-7f-rrc">
+                                <rect key="frame" x="119" y="250" width="172" height="97"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="hpd-hm-hWu"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="4vF-X8-nQ7"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gfB-KJ-WcP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1137.68115942029" y="56.919642857142854"/>
         </scene>
     </scenes>
     <resources>

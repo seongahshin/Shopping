@@ -6,9 +6,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 class ShoppingTableViewController: UITableViewController {
+    
+    let localRealm = try! Realm()
+    
     var list = ["사과", "바나나", "키위", "망고"]
+    
+    var tasks: Results<ShoppingModel>!
+    
     @IBOutlet weak var SearchTextField: UITextField!
     
     @IBOutlet weak var SearchButton: UIButton!
@@ -19,6 +26,13 @@ class ShoppingTableViewController: UITableViewController {
         super.viewDidLoad()
         viewDesign()
         tableView.rowHeight = 50
+        tasks = localRealm.objects(ShoppingModel.self).sorted(byKeyPath: "didList", ascending: false)
+        print(tasks)
+        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        tableView.reloadData()
     }
 
     func viewDesign() {
@@ -44,14 +58,14 @@ class ShoppingTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return list.count
+        return tasks.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as! ShoppingTableViewCell
-        
-        cell.titleLabel.text = list[indexPath.row]
+        let row = tasks[indexPath.row]
+        cell.titleLabel.text = row.didList
         cell.titleLabel.font = .boldSystemFont(ofSize: 18)
         cell.titleLabel.textAlignment = .center
         return cell
@@ -63,7 +77,15 @@ class ShoppingTableViewController: UITableViewController {
     }
     
     @IBAction func buttonClicked(_ sender: UIButton) {
-        list.append(SearchTextField.text!)
+        
+        guard let todoList = SearchTextField.text else { return }
+        let task = ShoppingModel(didList: todoList, notdidList: todoList)
+        
+        try! localRealm.write {
+            localRealm.add(task)
+            print(task)
+        }
+//        list.append(SearchTextField.text!)
         tableView.reloadData()
     }
     

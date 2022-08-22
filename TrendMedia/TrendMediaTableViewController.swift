@@ -9,7 +9,6 @@ import UIKit
 
 class TrendMediaTableViewController: UITableViewController {
     
-    
     var movieName = MovieInfo().movie
 //    var movieName = ["해리포터", "업", "탑건", "엘비스"]
     var moviePoster: [String] = ["HarryPotter.jpg", "Up.jpg", "TopGun.jpg", "Elbis.jpg"]
@@ -38,4 +37,5 @@ class TrendMediaTableViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return UIScreen.main.bounds.height / 8
     }
+    
 }

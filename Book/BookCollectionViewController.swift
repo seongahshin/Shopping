@@ -52,23 +52,30 @@ class BookCollectionViewController: UICollectionViewController {
         return cell
     }
     
-    // 0번 item cell 누르면 상세화면으로 이동
+    // 0번 item cell 누르면 상세화면으로 이동 (push)
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         
         if indexPath.item == 0 {
+            // 1. 화면전환할 스토리보드를 특정한다.
             let sb = UIStoryboard(name: "Book", bundle: nil)
+            // 2. 화면전환할 스토리보드 안에 VC를 특정한다.
             let vc = sb.instantiateViewController(withIdentifier: BookCollectionViewCell.identifier) as! BookViewController
+            // 3. 화면전환할 방법을 선택한다.
             self.navigationController?.pushViewController(vc, animated: true)
         }
     }
     
-    // 바버튼아이템 눌렀을 때 검색화면으로 이동
+    // 바 버튼 아이템 눌렀을 때 검색화면으로 이동 (present,fullscreen)
     @IBAction func searchbarButtonClicked(_ sender: UIBarButtonItem) {
+        // 1. 화면전환할 스토리보드를 특정한다.
         let sb = UIStoryboard(name: "Book", bundle: nil)
+        // 2. 화면전환할 스토리보드 안에 VC를 특정한다.
         let vc = sb.instantiateViewController(withIdentifier: BookCollectionViewCell.identifier1)
         as! SearchViewController
+        // 2.5 네비게이션 컨트롤러를 임베디드한다.
         let nav = UINavigationController(rootViewController: vc)
         nav.modalPresentationStyle = .fullScreen
+        // 3. 화면전환할 방법을 선택한다.
         self.present(nav, animated: true)
     }
 }
