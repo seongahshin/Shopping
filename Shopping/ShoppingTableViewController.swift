@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Kingfisher
 
 class ShoppingTableViewController: UITableViewController {
     
@@ -14,7 +15,13 @@ class ShoppingTableViewController: UITableViewController {
     
     var list = ["사과", "바나나", "키위", "망고"]
     
-    var tasks: Results<ShoppingModel>!
+    var tasks: Results<ShoppingModel>! {
+        didSet {
+            tableView.reloadData()
+        }
+    }
+    
+    var checked: Bool = true
     
     @IBOutlet weak var SearchTextField: UITextField!
     
@@ -26,11 +33,23 @@ class ShoppingTableViewController: UITableViewController {
         super.viewDidLoad()
         viewDesign()
         tableView.rowHeight = 50
-        tasks = localRealm.objects(ShoppingModel.self).sorted(byKeyPath: "didList", ascending: false)
+        tasks = localRealm.objects(ShoppingModel.self).sorted(byKeyPath: "buyList", ascending: false)
         print(tasks)
+//        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(plusButtonClicked))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "필터", style: .plain, target: self, action: #selector(filterbuttonClicked))
+        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "정렬", style: .plain, target: self, action: #selector(sortButtonClicked))
+        
         
     }
     
+    @objc func sortButtonClicked() {
+        tasks = localRealm.objects(ShoppingModel.self).sorted(byKeyPath: "didList", ascending: false)
+    }
+    
+    @objc func filterbuttonClicked() {
+        tasks = localRealm.objects(ShoppingModel.self).filter("didList = '사과'")
+        
+    }
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
@@ -65,11 +84,14 @@ class ShoppingTableViewController: UITableViewController {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "ShoppingTableViewCell", for: indexPath) as! ShoppingTableViewCell
         let row = tasks[indexPath.row]
-        cell.titleLabel.text = row.didList
+        cell.titleLabel.text = row.buyList
         cell.titleLabel.font = .boldSystemFont(ofSize: 18)
         cell.titleLabel.textAlignment = .center
+        
+        
         return cell
     }
+    
     
     @IBAction func TextFieldReturn(_ sender: UITextField) {
         list.append(sender.text!)
@@ -79,7 +101,8 @@ class ShoppingTableViewController: UITableViewController {
     @IBAction func buttonClicked(_ sender: UIButton) {
         
         guard let todoList = SearchTextField.text else { return }
-        let task = ShoppingModel(didList: todoList, notdidList: todoList)
+
+        let task = ShoppingModel(buyList: todoList, didList: false, favoriteList: false)
         
         try! localRealm.write {
             localRealm.add(task)

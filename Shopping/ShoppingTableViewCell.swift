@@ -8,6 +8,9 @@
 import UIKit
 
 class ShoppingTableViewCell: UITableViewCell {
+    
+    var checked: Bool = true
+    var favorite: Bool = true
 
     @IBOutlet weak var checkButton: UIButton!
     
@@ -15,7 +18,18 @@ class ShoppingTableViewCell: UITableViewCell {
     
     @IBOutlet weak var starButton: UIButton!
     
+    @IBAction func checkButtonClicked(_ sender: UIButton) {
+        
+        if checked {
+            checkButton.setImage(UIImage(systemName: "checkmark.circle.fill"), for: .normal)
+            checked = !checked
+            print(checked)
+        } else {
+            checkButton.setImage(UIImage(systemName: "checkmark.circle"), for: .normal)
+            checked = !checked
+            print(checked)
+        }
+    }
     
     
-
 }
