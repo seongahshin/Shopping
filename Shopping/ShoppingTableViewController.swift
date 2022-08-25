@@ -155,6 +155,20 @@ class ShoppingTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
+    
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let delete = UIContextualAction(style: .normal, title: "삭제") { [self] action, view, completionHandler in
+            completionHandler(true)
+            try! self.localRealm.write {
+                self.localRealm.delete(self.tasks[indexPath.row])
+                tableView.reloadData()
+            }
+        }
+        
+        let config = UISwipeActionsConfiguration(actions: [delete])
+        return config
+    }
         
         
     
