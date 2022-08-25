@@ -23,6 +23,21 @@ class ShoppingTableViewController: UITableViewController {
         }
     }
     
+    lazy var menuItems: [UIAction] = {
+        return [
+            UIAction(title: "할 일 완료순", image: UIImage(systemName: "arrow.down.circle"), handler: { _ in
+                self.tasks = self.localRealm.objects(ShoppingModel.self).sorted(byKeyPath: "didList", ascending: false)
+            }),
+            UIAction(title: "즐겨찾기순", image: UIImage(systemName: "square.and.arrow.up"), handler: { _ in
+                self.tasks = self.localRealm.objects(ShoppingModel.self).sorted(byKeyPath: "favoriteList", ascending: false)
+            }),
+        ]
+    }()
+    
+    lazy var menu: UIMenu = {
+        return UIMenu(title: "", options: [], children: menuItems)
+    }()
+    
     @IBOutlet weak var SearchTextField: UITextField!
     
     @IBOutlet weak var SearchButton: UIButton!
@@ -36,21 +51,17 @@ class ShoppingTableViewController: UITableViewController {
         tasks = localRealm.objects(ShoppingModel.self).sorted(byKeyPath: "buyList", ascending: false)
         print(tasks)
 //        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "star"), style: .plain, target: self, action: #selector(plusButtonClicked))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "필터", style: .plain, target: self, action: #selector(filterbuttonClicked))
-        navigationItem.leftBarButtonItem = UIBarButtonItem(title: "정렬", style: .plain, target: self, action: #selector(sortButtonClicked))
         
         tasks = localRealm.objects(ShoppingModel.self)
         
-    }
-    
-    @objc func sortButtonClicked() {
-        tasks = localRealm.objects(ShoppingModel.self).sorted(byKeyPath: "didList", ascending: false)
-    }
-    
-    @objc func filterbuttonClicked() {
-        tasks = localRealm.objects(ShoppingModel.self).filter("didList = '사과'")
+        if #available(iOS 14.0, *) {
+            self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "ellipsis.circle"), menu: menu)
+        }
         
     }
+    
+   
+    
     override func viewWillAppear(_ animated: Bool) {
         tableView.reloadData()
     }
