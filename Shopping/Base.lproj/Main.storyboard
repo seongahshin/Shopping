@@ -72,7 +72,6 @@
                                             <buttonConfiguration key="configuration" style="plain" image="checkmark.circle" catalog="system"/>
                                             <connections>
                                                 <action selector="checkButton:" destination="SmH-kb-A7g" eventType="touchUpInside" id="u9V-JD-e7m"/>
-                                                <action selector="checkButtonClicked:" destination="cee-vp-F26" eventType="touchUpInside" id="EWT-A8-fFJ"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UKF-np-8VJ">
@@ -88,6 +87,9 @@
                                             </constraints>
                                             <state key="normal" title="Button"/>
                                             <buttonConfiguration key="configuration" style="plain" image="star" catalog="system"/>
+                                            <connections>
+                                                <action selector="favoriteButtonClicked:" destination="y0a-LV-Edr" eventType="touchUpInside" id="l5E-Rb-nC4"/>
+                                            </connections>
                                         </button>
                                     </subviews>
                                     <constraints>

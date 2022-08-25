@@ -11,16 +11,13 @@ import RealmSwift
 class ShoppingModel: Object {
     
     @Persisted var buyList: String
-    @Persisted var didList: Bool
-    @Persisted var favoriteList: Bool
+    @Persisted var didList: Bool = false
+    @Persisted var favoriteList: Bool = false
     
     @Persisted(primaryKey: true) var objectId: ObjectId
     
-    convenience init(buyList: String, didList: Bool, favoriteList: Bool) {
+    convenience init(buyList: String) {
         self.init()
         self.buyList = buyList
-        self.didList = didList
-        self.favoriteList = favoriteList
-        
     }
 }

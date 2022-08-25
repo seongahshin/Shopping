@@ -13,6 +13,8 @@ class ShoppingTableViewController: UITableViewController {
     
     let localRealm = try! Realm()
     
+    var shoppingList: [ShoppingModel] = []
+    
     var list = ["사과", "바나나", "키위", "망고"]
     
     var tasks: Results<ShoppingModel>! {
@@ -20,8 +22,6 @@ class ShoppingTableViewController: UITableViewController {
             tableView.reloadData()
         }
     }
-    
-    var checked: Bool = true
     
     @IBOutlet weak var SearchTextField: UITextField!
     
@@ -39,6 +39,7 @@ class ShoppingTableViewController: UITableViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "필터", style: .plain, target: self, action: #selector(filterbuttonClicked))
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "정렬", style: .plain, target: self, action: #selector(sortButtonClicked))
         
+        tasks = localRealm.objects(ShoppingModel.self)
         
     }
     
@@ -88,8 +89,39 @@ class ShoppingTableViewController: UITableViewController {
         cell.titleLabel.font = .boldSystemFont(ofSize: 18)
         cell.titleLabel.textAlignment = .center
         
+        cell.checkButton.tag = indexPath.row
+        cell.starButton.tag = indexPath.row
+        
+        cell.checkButton.addTarget(self, action: #selector(checkButtonClicked(_:)), for: .touchUpInside)
+        cell.starButton.addTarget(self, action: #selector(favoriteButtonClicked(_:)), for: .touchUpInside)
+        
+        row.didList ? cell.checkButton.setImage(UIImage(systemName: "checkmark.square.fill"), for: .normal) : cell.checkButton.setImage(UIImage(systemName: "checkmark.square"), for: .normal)
+        row.favoriteList ? cell.starButton.setImage(UIImage(systemName: "star.fill"), for: .normal) : cell.starButton.setImage(UIImage(systemName: "star"), for: .normal)
+        
         
         return cell
+    }
+    
+    @objc func checkButtonClicked(_ sender: UIButton) {
+
+        let updatetasks = tasks[sender.tag]
+        print(sender.tag)
+        
+        try! localRealm.write {
+            updatetasks.didList = !updatetasks.didList
+        }
+        tableView.reloadData()
+        
+    }
+    
+    @IBAction func favoriteButtonClicked(_ sender: UIButton) {
+        
+        let updatetasks = tasks[sender.tag]
+        
+        try! localRealm.write {
+            updatetasks.favoriteList = !updatetasks.favoriteList
+        }
+        tableView.reloadData()
     }
     
     
@@ -100,17 +132,21 @@ class ShoppingTableViewController: UITableViewController {
     
     @IBAction func buttonClicked(_ sender: UIButton) {
         
-        guard let todoList = SearchTextField.text else { return }
-
-        let task = ShoppingModel(buyList: todoList, didList: false, favoriteList: false)
-        
-        try! localRealm.write {
-            localRealm.add(task)
-            print(task)
+        if let todoList = SearchTextField.text {
+            shoppingList.append(ShoppingModel(buyList: todoList))
+            let task = ShoppingModel(buyList: todoList)
+            
+            try! localRealm.write {
+                localRealm.add(task)
+                print(task)
+            }
+            tasks = localRealm.objects(ShoppingModel.self)
+            tableView.reloadData()
         }
-//        list.append(SearchTextField.text!)
-        tableView.reloadData()
     }
+        
+        
+    
     
 }
 
